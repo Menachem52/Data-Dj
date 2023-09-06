@@ -1,0 +1,3 @@
+select artist_name,count(*) as count  from tracks_features
+group by artist_name
+order by count  desc 
