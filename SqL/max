@@ -1,0 +1,1 @@
+select  max(energy)  from tracks_features
