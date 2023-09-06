@@ -1,0 +1,1 @@
+select artist_name,track_name from trance_tracks
