@@ -1,0 +1,3 @@
+select artist_name,sum(energy) as sum   from tracks_features
+group by artist_name
+order by sum  desc  
