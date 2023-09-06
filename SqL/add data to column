@@ -1,0 +1,2 @@
+update trance_tracks3 
+set ArtistTrack=concat(artist_name,"///",track_name)
