@@ -1,0 +1,1 @@
+select  min(energy)  from tracks_features
