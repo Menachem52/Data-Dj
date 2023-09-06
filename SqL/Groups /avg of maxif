@@ -1,0 +1,5 @@
+with newtable as(
+select artist_name,max(popularity) as maxif from tracks_features
+group by artist_name 
+order by max(popularity) desc )
+select avg(maxif) from newtable 
