@@ -1,0 +1,2 @@
+-- select artist_name,track_name from tracks_features
+select concat(artist_name," /// ",track_name) from tracks_features
