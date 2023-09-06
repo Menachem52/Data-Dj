@@ -1,0 +1,2 @@
+select * from tracks_features 
+where artist_name not like '%armin%' 
