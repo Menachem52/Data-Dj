@@ -1,0 +1,1 @@
+select sum(danceability)  from tracks_features
