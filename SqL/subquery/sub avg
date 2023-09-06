@@ -1,0 +1,2 @@
+select artist_name,track_name,(select AVG(instrumentalness) 
+from tracks_features ) from tracks_features
