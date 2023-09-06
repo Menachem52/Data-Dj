@@ -1,0 +1,1 @@
+select  avg(energy)  from tracks_features
