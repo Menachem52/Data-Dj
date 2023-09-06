@@ -1,0 +1,16 @@
+select * from tracks_features 
+where popularity > 20
+
+
+select * from tracks_features 
+where popularity > 20
+
+
+
+select * from tracks_features 
+where popularity  = 20
+
+
+
+
+
