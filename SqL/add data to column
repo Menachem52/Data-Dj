@@ -16,7 +16,7 @@ set todaydate= '2023.07.09'     dates
 
 
 update tracks_features 
-set DanceEnergy=danceability+energy      numbeer 
+set DanceEnergy=danceability+energy     number 
 
 
 
