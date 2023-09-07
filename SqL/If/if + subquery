@@ -1,0 +1,7 @@
+with newtable as(
+select artist_name,AVG(energy) as 'ArtistAvg',(select avg(energy)   from tracks_features$) as 'TotalAvg' from tracks_features$
+group by artist_name) 
+select 
+artist_name,ArtistAvg,TotalAvg,(ArtistAvg-TotalAvg) as 'AboveAvg',case when ArtistAvg>TotalAvg then 'good' else 'bad' end as 'good/bad'  from newtable
+order by AboveAvg desc 
+ 
