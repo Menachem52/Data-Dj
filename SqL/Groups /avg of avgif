@@ -1,0 +1,5 @@
+with newtable as(
+select artist_name,AVG(tempo) as tempoavg from tracks_features$
+group by artist_name 
+  )
+select AVG(tempoavg)  from newtable 
