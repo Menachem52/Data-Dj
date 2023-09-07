@@ -1,0 +1,5 @@
+
+select artist_name ,track_name,energy,case when energy > 0.8 
+and   artist_name not like '%armin %'     then 'good' else 'bad' end as 'good/bad' from tracks_features$
+where artist_name like '%armin%'
+order by energy desc 
