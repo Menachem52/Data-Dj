@@ -8,3 +8,9 @@ add column todaydate date                       dates
 alter table tracks_features 
 add column DanceEnergy decimal (10,2)         numeric/number 
 
+
+
+sqlserver 
+ 
+ alter table [dbo].[tracks_features$]
+ add column_TodayDate  date            
