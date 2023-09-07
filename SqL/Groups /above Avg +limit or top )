@@ -1,9 +1,17 @@
 with newtable as(
-select artist_name,AVG(energy) as 'ArtistAvg',(select avg(energy)   from tracks_features$) as 'TotalAvg' from tracks_features$
+select artist_name,AVG(energy) as 'ArtistAvg',(select avg(energy)   from tracks_features) as 'TotalAvg' from tracks_features
 group by artist_name) 
-select top 10 artist_name,(TotalAvg-ArtistAvg) as 'AboveAvg'   from newtable
+select   artist_name,ArtistAvg,TotalAvg,(TotalAvg-ArtistAvg) as 'AboveAvg'   from newtable
+where (TotalAvg-ArtistAvg) > 0 
 order by AboveAvg desc
-limit 10 
+limit 5 
 
-sql server = top 
-mysql = limit 
+
+sqlserver 
+with newtable as(
+select artist_name,AVG(energy) as 'ArtistAvg',(select avg(energy)   from tracks_features) as 'TotalAvg' from tracks_features
+group by artist_name) 
+select  top 5  artist_name,ArtistAvg,TotalAvg,(TotalAvg-ArtistAvg) as 'AboveAvg'   from newtable
+where (TotalAvg-ArtistAvg) > 0 
+order by AboveAvg desc
+ 
