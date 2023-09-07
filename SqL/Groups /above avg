@@ -1,5 +1,7 @@
 with newtable as(
-select artist_name,avg(danceability) as 'ArtistAvg',(select avg(danceability) from tracks_features ) as 'TotalAvg' from tracks_features
-group by artist_name )
-select artist_name,(TotalAvg-ArtistAvg) as AboveAvg from newtable 
-order by AboveAvg desc 
+select artist_name,AVG(energy) as 'ArtistAvg',(select avg(energy)   from tracks_features) as 'TotalAvg' from tracks_features
+group by artist_name) 
+select   artist_name,ArtistAvg,TotalAvg,(TotalAvg-ArtistAvg) as 'AboveAvg'   from newtable
+where (TotalAvg-ArtistAvg) > 0 
+order by AboveAvg desc
+
