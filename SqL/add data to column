@@ -1,5 +1,15 @@
+mysql
 update trance_tracks3 
 set ArtistTrack=concat(artist_name,"///",track_name)         varchar
+
+
+
+sqlserver 
+update [dbo].[trance_tracks$]
+set column_ArtistTrackk=CONCAT(artist_name , track_name)
+
+
+
 
 update tracks_features 
 set todaydate= '2023.07.09'     dates 
