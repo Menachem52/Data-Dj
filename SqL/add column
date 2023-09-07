@@ -1,2 +1,10 @@
 alter table trance_tracks3 
-add column ArtistTrack varchar(1000)
+add column ArtistTrack varchar(1000)            text      
+
+alter table tracks_features 
+add column todaydate date                       dates 
+
+
+alter table tracks_features 
+add column DanceEnergy decimal (10,2)         numeric/number 
+
