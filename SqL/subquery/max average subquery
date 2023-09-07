@@ -1,0 +1,15 @@
+with newtable as (
+SELECT 
+    track_name,
+    MAX(instrumentalness) MaxInstrumentalness,
+    (SELECT 
+            AVG(instrumentalness)
+        FROM
+            tracks_features) AS AvgInstrumentalness
+FROM
+    tracks_features
+GROUP BY track_name
+ORDER BY MaxInstrumentalness DESC) 
+select   track_name ,MaxInstrumentalness,AvgInstrumentalness,
+(MaxInstrumentalness- AvgInstrumentalness ),case when MaxInstrumentalness>AvgInstrumentalness 
+then 'good' else 'bad' end as 'good/bad' from newtable 
