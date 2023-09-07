@@ -1,0 +1,13 @@
+mysql 
+select datediff(todaydate,release_date) from tracks_features 
+
+  sql server 
+year 
+select column_todaydate,release_date,datediff(YEAR,release_date,column_todaydate) from tracks_features$  
+  month 
+  select column_todaydate,release_date,datediff(MONTH,release_date,column_todaydate) from tracks_features$  
+    day 
+    select column_todaydate,release_date,datediff(day,release_date,column_todaydate) as 'days' from tracks_features$  
+
+      
+  
