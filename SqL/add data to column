@@ -1,2 +1,22 @@
 update trance_tracks3 
-set ArtistTrack=concat(artist_name,"///",track_name)
+set ArtistTrack=concat(artist_name,"///",track_name)         function 
+
+
+update tracks_features 
+set todaydate= '2023.07.09'     dates 
+
+
+update tracks_features 
+set DanceEnergy=danceability+energy      numbeer 
+
+
+
+
+
+
+
+
+
+
+
+
