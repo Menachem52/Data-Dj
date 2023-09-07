@@ -1,0 +1,4 @@
+with newtable as (
+select artist_name,count(artist_name) as countartistname from tracks_features
+group by artist_name ) 
+select count(countartistname) from newtable 
