@@ -1,0 +1,10 @@
+SELECT 
+    release_date,
+    YEAR(release_date),
+    YEARWEEK(release_date),
+    MONTH(release_date),
+    MONTHNAME(release_date),
+    day(release_date)
+    DAYNAME(release_date)
+FROM
+    tracks_features
