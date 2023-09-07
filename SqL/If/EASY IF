@@ -1,0 +1,3 @@
+
+select track_name,energy,case when energy > 0.8 then 'good' else 'bad' end as 'good/bad' from tracks_features$
+order by energy desc
