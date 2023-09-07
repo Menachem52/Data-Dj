@@ -1,0 +1,4 @@
+select artist_name,min(popularity) as minpop from tracks_features 
+group by artist_name
+order by minpop desc 
+ 
