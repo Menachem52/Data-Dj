@@ -1,0 +1,4 @@
+select Genre,COUNT(Genre) from djs_track dt 
+inner join djs_detail dd 
+on dt.djs_number=dd.djs_number
+group by Genre
