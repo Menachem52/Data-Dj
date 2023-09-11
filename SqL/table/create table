@@ -1,0 +1,6 @@
+create database in object explorer 
+
+
+create table friends 
+(friend_number int identity (1,1) primary key,
+friend_firstname varchar(max),friend_lastname varchar(max),city varchar (max),age int)
