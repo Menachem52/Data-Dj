@@ -1,4 +1,4 @@
-insert into friends2(friend_firstname,friend_lastname,city,age)
+insert into friends(friend_firstname,friend_lastname,city,age)
 values ('ofer','noama','ramat gan',31)
-insert into friends2(friend_firstname,friend_lastname,city,age)
+insert into friends(friend_firstname,friend_lastname,city,age)
 values ('boris','manashirov','natanya',31)
