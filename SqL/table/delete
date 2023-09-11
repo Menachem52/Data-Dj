@@ -1,2 +1,2 @@
-delete from friends2
+delete from friends
 where friend_number between 1 and 10
