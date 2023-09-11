@@ -1,2 +1,2 @@
 create table djs_detail
-(djs_number int ,djs_firstname varchar(max),djs_lastname varchar(max),Genre varchar (max),age int)
+(djs_number int primary key ,djs_firstname varchar(max),djs_lastname varchar(max),Genre varchar (max),age int)
