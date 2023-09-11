@@ -1,0 +1,2 @@
+create table djs_track 
+(track_number int primary key,track_name varchar (max),djs_number int foreign key references djs_detail(djs_number))
