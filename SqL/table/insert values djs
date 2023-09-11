@@ -1,0 +1,8 @@
+insert into djs_detail(djs_number,djs_firstname,djs_lastname,Genre,age)
+values(1,'Menachem','Talmid','trance',30)
+insert into djs_detail(djs_number,djs_firstname,djs_lastname,Genre,age)
+values (2,'mordi','zilber','trance',30)
+insert into djs_detail(djs_number,djs_firstname,djs_lastname,Genre,age)
+values (3,'maor','landau','trance',30)
+insert into djs_detail(djs_number,djs_firstname,djs_lastname,Genre,age)
+values (4,'gilad','zilber','techno',24)
