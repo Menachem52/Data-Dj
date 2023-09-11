@@ -1,0 +1,2 @@
+delete from friends2
+where friend_number between 1 and 10
