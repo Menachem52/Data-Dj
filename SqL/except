@@ -1,0 +1,7 @@
+data that r not in both tabels 
+
+
+
+select  track_name from tracks_features$
+except 
+select track_name   from trance_tracks$
