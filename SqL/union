@@ -1,0 +1,3 @@
+select  artist_name from tracks_features$
+union 
+select artist_name   from trance_tracks$
