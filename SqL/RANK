@@ -1,0 +1,2 @@
+select artist_name,track_name,popularity,RANK() OVER (ORDER BY popularity DESC  )
+AS 'RANK' from tracks_features$   
