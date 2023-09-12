@@ -1,0 +1,3 @@
+select datename(YEAR,release_date) as year,DATENAME(MONTH,release_date) as mmmmm ,energy from tracks_features$
+where MONTH(release_date) in (1,2,3) 
+
