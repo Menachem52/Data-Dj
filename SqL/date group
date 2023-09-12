@@ -1,0 +1,4 @@
+in which month most of the releases? 
+  
+select DATENAME(MONTH,release_date) as mmmmm ,count(track_name) from tracks_features$
+group by DATENAME(MONTH,release_date)
