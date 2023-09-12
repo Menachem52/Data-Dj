@@ -1,0 +1,7 @@
+data that r in both  tabels 
+
+
+select  artist_name from tracks_features$
+intersect 
+select artist_name   from trance_tracks$ 
+
