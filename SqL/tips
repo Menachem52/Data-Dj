@@ -1,0 +1,6 @@
+varchar = is best suited for storing short to medium-length string 
+ text =  is better suited for storing large amounts of textual data 
+ int= any number 
+  integer= whole number Accepts positive and negative whole numbers, but not decimals or fractions
+decimal =  Accepts any number with decimal places
+date = date 
