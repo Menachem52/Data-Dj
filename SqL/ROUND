@@ -1,0 +1,7 @@
+whole number
+SELECT danceability,ROUND(danceability,0) FROM tracks_features$
+
+
+decimal 
+
+SELECT danceability,ROUND(danceability,1) FROM tracks_features$
