@@ -1,0 +1,4 @@
+select YEAR(release_date) as year ,DATENAME(MONTH,release_date) ,SUM(energy)  from tracks_features$
+where YEAR(release_date)  in (2019,2018) and month(release_date) in (2,3,4)
+group by YEAR(release_date) ,DATENAME(MONTH,release_date)
+order by year 
