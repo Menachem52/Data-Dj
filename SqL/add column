@@ -1,4 +1,4 @@
-alter table trance_tracks3 
+alter table trance_tracks3
 add column ArtistTrack varchar(1000)            text      
 
 alter table tracks_features 
