@@ -1,0 +1,2 @@
+select artist_name,AVG(case when danceability> 0.592286588831709 then danceability end) artist_avg_danceability,(select AVG(danceability)  from tracks_features$) avg_danceability from tracks_features$
+group by artist_name
