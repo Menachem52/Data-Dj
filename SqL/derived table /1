@@ -1,0 +1,9 @@
+select dd.djs_number,djs_firstname,max_age,track_name from 
+(select djs_number,djs_firstname,MAX(case when age > 25 then age else 0 end ) max_age  from djs_detail 
+where djs_lastname = 'zilber'
+group by djs_number,djs_firstname) dd
+join
+
+(select * from djs_track 
+where track_name='happy now')dt
+on dt.djs_number=dd.djs_number
