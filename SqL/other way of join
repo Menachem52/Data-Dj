@@ -1,0 +1,7 @@
+
+select * from tracks_features$
+where track_id=(select track_id from trance_tracks$ where popularity >'70')
+<> not 
+
+select * from tracks_features$
+where track_id in (select track_id from trance_tracks$ where popularity <>'70')
