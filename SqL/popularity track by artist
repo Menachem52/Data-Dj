@@ -1,0 +1,7 @@
+with newtable as
+(select artist_name,track_name,popularity,rank()  over 
+ (partition by artist_name order by popularity desc ) rnk
+from tracks_features$)
+select artist_name,track_name,popularity,rnk from newtable
+where rnk = '1'
+order by popularity desc 
