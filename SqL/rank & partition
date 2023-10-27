@@ -1,0 +1,3 @@
+select artist_name,track_name,popularity,rank() over 
+ (partition by artist_name order by popularity desc  )
+from tracks_features$
