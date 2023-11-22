@@ -1,0 +1,13 @@
+select * from djs_detail d
+ left join djs_detail t
+on t.djs_number<>d.djs_number
+
+
+
+
+select * from djs_detail d
+ join djs_detail t
+on t.djs_number<d.djs_number
+
+
+
