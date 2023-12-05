@@ -1,0 +1,2 @@
+select  track_name,tempo,case when tempo < 120 then 'slow' when tempo < 130 then 'meduim' when tempo < 140 then 'fast'  else 'super fast' end as velocity  from tracks_features$
+order by tempo  desc
