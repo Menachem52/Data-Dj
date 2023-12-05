@@ -1,1 +1,6 @@
 select popularity,PERCENTILE_CONT(0.5) within group(order by popularity  desc ) over ()  from tracks_features$
+
+
+with partition 
+
+select artist_name,PERCENTILE_CONT(0.5) within group(order by popularity desc ) over (partition by  artist_name)  from tracks_features$
