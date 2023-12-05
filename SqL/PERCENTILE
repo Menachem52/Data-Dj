@@ -1,0 +1,1 @@
+select popularity,PERCENTILE_CONT(0.5) within group(order by popularity  desc ) over ()  from tracks_features$
