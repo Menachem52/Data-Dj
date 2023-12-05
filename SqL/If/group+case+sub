@@ -1,0 +1,6 @@
+with newtable as (
+select artist_name ,track_name,tempo,case when tempo < 120 then 'slow' when tempo < 130 then 'meduim' when tempo < 140 then 'fast'  else 'super fast' end as velocity  from tracks_features$
+)
+select artist_name,velocity,AVG(tempo) from newtable
+group by artist_name,velocity
+order by AVG(tempo) desc 
