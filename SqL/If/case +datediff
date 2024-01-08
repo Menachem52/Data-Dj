@@ -1,0 +1,8 @@
+
+select distinct  e.EmployeeID,avg(case when DATEDIFF(day,ShippedDate,RequiredDate)< 0 
+then DATEDIFF(day,ShippedDate,RequiredDate)  end )just_in_time from Employees e
+inner join orders o 
+on o.EmployeeID=e.EmployeeID
+left join [Order Details] od 
+on od.OrderID=o.OrderID
+group by  e.EmployeeID 
