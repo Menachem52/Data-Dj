@@ -1,0 +1,5 @@
+select  EmployeeID from Orders
+
+
+  values that not returned 
+select distinct EmployeeID from Orders 
