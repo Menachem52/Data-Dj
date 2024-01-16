@@ -1,0 +1,10 @@
+newtable2 as(
+select distinct  date,("close"-"open") close_open ,case when "close">"open" 
+then 'positive' when 
+"close"<"open" then 'negative' else 'equal'   end  p_or_n
+from MU
+ )
+select  datename(MONTH,date)month_name,p_or_n,count(p_or_n) count_p_n from newtable2
+where year(date) in (2023) and p_or_n = 'negative'
+group by datename(MONTH,date),p_or_n
+order by  datename(MONTH,date)
