@@ -1,0 +1,95 @@
+with newtable as(
+select distinct  date,("close"-"open") close_open ,case when "close">"open" 
+then 'positive' when 
+"close"<"open" then 'negative' else 'equal'   end  p_or_n
+from MU
+ )
+select  datename(MONTH,date)month_name,p_or_n,count(p_or_n) count_p_n from newtable
+where year(date) in (2023) and p_or_n = 'positive'
+group by datename(MONTH,date),p_or_n
+order by  datename(MONTH,date)
+
+
+
+
+with newtable2 as(
+select distinct  date,("close"-"open") close_open ,case when "close">"open" 
+then 'positive' when 
+"close"<"open" then 'negative' else 'equal'   end  p_or_n
+from MU
+ )
+select  datename(MONTH,date)month_name,p_or_n,count(p_or_n) count_p_n from newtable2
+where year(date) in (2023) and p_or_n = 'negative'
+group by datename(MONTH,date),p_or_n
+order by  datename(MONTH,date)
+
+
+
+WITH newtable AS (
+    SELECT
+        DISTINCT date,
+        ("close" - "open") AS close_open,
+        CASE
+            WHEN "close" > "open" THEN 'positive'
+            WHEN "close" < "open" THEN 'negative'
+            ELSE 'equal'
+        END AS p_or_n
+    FROM
+        MU
+),
+newtable2 AS (
+    SELECT
+        DISTINCT date,
+        ("close" - "open") AS close_open,
+        CASE
+            WHEN "close" > "open" THEN 'positive'
+            WHEN "close" < "open" THEN 'negative'
+            ELSE 'equal'
+        END AS p_or_n
+    FROM
+        MU
+)
+
+SELECT
+    COALESCE(t1.month_name, t2.month_name) AS month_name,
+    t1.p_or_n AS p_or_n_1,
+    t1.count_p_n AS count_p_n_1,
+    t2.p_or_n AS p_or_n_2,
+    t2.count_p_n AS count_p_n_2
+FROM
+    (
+        SELECT
+            DATENAME(MONTH, date) AS month_name,
+            p_or_n,
+            COUNT(p_or_n) AS count_p_n
+        FROM
+            newtable
+        WHERE
+            YEAR(date) = 2023
+            AND p_or_n = 'positive'
+        GROUP BY
+            DATENAME(MONTH, date),
+            p_or_n
+    ) t1
+
+FULL JOIN
+
+    (
+        SELECT
+            DATENAME(MONTH, date) AS month_name,
+            p_or_n,
+            COUNT(p_or_n) AS count_p_n
+        FROM
+            newtable2
+        WHERE
+            YEAR(date) = 2023
+            AND p_or_n = 'negative'
+        GROUP BY
+            DATENAME(MONTH, date),
+            p_or_n
+    ) t2
+
+ON t1.month_name = t2.month_name
+ORDER BY
+    COALESCE(t1.month_name, t2.month_name);
+
