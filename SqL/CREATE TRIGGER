@@ -1,0 +1,7 @@
+CREATE TRIGGER LogNewCustomer
+AFTER INSERT ON Customers
+FOR EACH ROW
+BEGIN
+    INSERT INTO CustomerLog (CustomerID, Action, ActionDate)
+    VALUES (NEW.CustomerID, 'New Customer Added', NOW());
+END;
