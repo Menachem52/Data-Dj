@@ -1,0 +1,10 @@
+CREATE VIEW HighValueOrders AS
+SELECT 
+    OrderID,
+    CustomerName,
+    OrderDate,
+    TotalAmount
+FROM 
+    Orders
+WHERE 
+    TotalAmount > 1000; 
